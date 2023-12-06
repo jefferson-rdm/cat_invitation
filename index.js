@@ -31,7 +31,7 @@ noBtn.addEventListener('mouseover', moveBtn)
 yesBtn.addEventListener('click', e => {
   e.preventDefault()
 
-  gif.src = "gatitos_abrazados.gif"
+  gif.src = "https://i.pinimg.com/originals/c9/d1/0f/c9d10fbb18e19fcc6d01cdac92125f50.gif"
   noBtn.parentNode.removeChild(noBtn)
   btnContainer.style.justifyContent = 'center'
   text.textContent = "Yay, te veo el 13 de este mes! >///<"
