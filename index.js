@@ -4,6 +4,9 @@ const gif = document.querySelector('img')
 const btnContainer = document.querySelector('.buttons')
 const text = document.querySelector('h1')
 
+const imgBefore = document.querySelector('img.before')
+const imgAfter = document.querySelector('img.after')
+
 const rectNoBtn = noBtn.getBoundingClientRect()
 
 function randomScreenValue (){
@@ -28,17 +31,20 @@ noBtn.addEventListener('click', moveBtn)
 
 noBtn.addEventListener('mouseover', moveBtn)
 
-yesBtn.addEventListener('click', e => {
+function yesBtnHandler (e){
   e.preventDefault()
 
-  gif.src = "https://i.pinimg.com/originals/c9/d1/0f/c9d10fbb18e19fcc6d01cdac92125f50.gif"
+  imgBefore.style.opacity = "0"; imgAfter.style.opacity = "1"
+  imgBefore.style.position = "absolute"; imgAfter.style.position = "static"
   noBtn.parentNode.removeChild(noBtn)
   btnContainer.style.justifyContent = 'center'
   text.textContent = "Yay, te veo el 13 de este mes! >///<"
 
   bye()
-})
+}
+
+yesBtn.addEventListener('click', yesBtnHandler)
 
 function bye (){
-  yesBtn.removeEventListener('click', moveBtn)
+  yesBtn.removeEventListener('click', yesBtnHandler)
 }
